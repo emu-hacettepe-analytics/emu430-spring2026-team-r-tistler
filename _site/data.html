@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Team R’tistler – xxx' Project Lab</title>
+<title>Data – R’tistler Project Lab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -42,9 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0e5074b58188f8d01d6da366fae00f66.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-cd93109820dc32abe2ab9168c608f182.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-0e5074b58188f8d01d6da366fae00f66.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-0e4c9d655e24f7e12b0eb2b9179513c0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-e2e0bc1604ec382c2cf557df7b823c0a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-0e4c9d655e24f7e12b0eb2b9179513c0.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -74,10 +74,9 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="floating nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+<body class="nav-fixed quarto-light"><script id="quarto-html-before-body" type="application/javascript">
     const toggleBodyColorMode = (bsSheetEl) => {
       const mode = bsSheetEl.getAttribute("data-mode");
       const bodyEl = window.document.querySelector("body");
@@ -249,7 +248,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">xxx’ Project Lab</span>
+    <span class="navbar-title">R’tistler Project Lab</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -259,11 +258,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./data.html"> 
+    <a class="nav-link active" href="./data.html" aria-current="page"> 
 <span class="menu-text">Data</span></a>
   </li>  
   <li class="nav-item">
@@ -273,7 +272,6 @@ ul.task-list li input[type="checkbox"] {
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
-    <a href="https://twitter.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
@@ -282,20 +280,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <nav id="TOC" role="doc-toc" class="toc-active">
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#team-members" id="toc-team-members" class="nav-link active" data-scroll-target="#team-members">Team Members</a></li>
-  <li><a href="#project-topic" id="toc-project-topic" class="nav-link" data-scroll-target="#project-topic">Project Topic</a></li>
-  <li><a href="#data-set" id="toc-data-set" class="nav-link" data-scroll-target="#data-set">Data Set</a></li>
+  <li><a href="#our-dataset" id="toc-our-dataset" class="nav-link active" data-scroll-target="#our-dataset">Our Dataset</a>
+  <ul class="collapse">
+  <li><a href="#data-sources" id="toc-data-sources" class="nav-link" data-scroll-target="#data-sources">Data Sources</a></li>
+  <li><a href="#why-this-dataset" id="toc-why-this-dataset" class="nav-link" data-scroll-target="#why-this-dataset">Why This Dataset?</a></li>
+  <li><a href="#data-preparation-preprocessing" id="toc-data-preparation-preprocessing" class="nav-link" data-scroll-target="#data-preparation-preprocessing">Data Preparation (Preprocessing)</a></li>
+  <li><a href="#loading-necessary-library" id="toc-loading-necessary-library" class="nav-link" data-scroll-target="#loading-necessary-library">Loading necessary library</a></li>
+  </ul></li>
   </ul>
 </nav>
-</nav>
-<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
-<!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -303,7 +302,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Team R’tistler</h1>
+<h1 class="title">Data</h1>
 </div>
 
 
@@ -320,29 +319,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is our project webpage.</p>
-<p>Please stay tuned to follow our project activities.</p>
-<section id="team-members" class="level1">
-<h1>Team Members</h1>
-<ul>
-<li><a href="https://github.com/edaacanlab">Eda CAN</a></li>
-<li><a href="https://github.com/basakozer">Başak ÖZER</a></li>
-<li><a href="https://github.com/cihangiralperen">Cihangir Alperen TOKGÖZ</a></li>
-<li><a href="https://github.com/eceozcann">Ece Özlem ÖZCAN</a></li>
-<li><a href="https://github.com/senasivrikaya">Sena SİVRİKAYA</a></li>
-</ul>
+<p>Data source:</p>
+<section id="our-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="our-dataset">Our Dataset</h2>
+<p>Our project utilizes a comprehensive dataset combining tourism indicators and macroeconomic variables for Northern Cyprus (TRNC) covering the period <strong>2015–2024</strong>.</p>
+<section id="data-sources" class="level3">
+<h3 class="anchored" data-anchor-id="data-sources">Data Sources</h3>
+<p>To ensure a robust analysis, we merged data from multiple official sources: - <strong>Tourism Statistics:</strong> Total arrivals, bednights, occupancy rates, and average length of stay were obtained from the <em>TRNC Tourism Planning Department Statistical Yearbooks</em>. - <strong>Macroeconomic Indicators:</strong> - Consumer Price Index (CPI) for TRNC was sourced from the <em>TRNC Statistical Institute</em>. - Turkey’s annual inflation rates (CPI YoY%) were retrieved from the <em>World Bank WDI</em>. - Exchange rates (EUR/TRY and USD/TRY) were collected from <em>TCMB EVDS</em> and <em>World Bank</em> records.</p>
 </section>
-<section id="project-topic" class="level1">
-<h1>Project Topic</h1>
-<p>This project examines the development of the tourism sector in the Turkish Republic of Northern Cyprus (TRNC) between 2015 and 2024. Our analysis focuses on tourist flows, accommodation statistics, and the relationship between these indicators and macroeconomic variables such as inflation and exchange rates. Specifically, the impact of the COVID-19 pandemic on the sector and the subsequent recovery process are analyzed through a data-driven approach.</p>
+<section id="why-this-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="why-this-dataset">Why This Dataset?</h3>
+<p>Tourism is a cornerstone of the TRNC economy, yet it is highly vulnerable to external shocks. We chose this dataset to investigate: 1. The quantitative impact of the <strong>COVID-19 pandemic</strong>. 2. How the <strong>fluctuations in the Turkish Lira</strong> affect the attractiveness of Northern Cyprus as a destination. 3. The relationship between <strong>inflationary pressures</strong> in Turkey and visitor behavior in TRNC.</p>
 </section>
-<section id="data-set" class="level1">
-<h1>Data Set</h1>
+<section id="data-preparation-preprocessing" class="level3">
+<h3 class="anchored" data-anchor-id="data-preparation-preprocessing">Data Preparation (Preprocessing)</h3>
+<p>The following R code (collapsible) shows how we cleaned the raw data, handled missing values for certain CPI sub-indices, and merged different tables into a single unified panel dataset for analysis.</p>
+</section>
+<section id="loading-necessary-library" class="level3">
+<h3 class="anchored" data-anchor-id="loading-necessary-library">Loading necessary library</h3>
+<p>library(tidyverse)</p>
+<p>The code below is a simplified version of our preprocessing pipeline</p>
+<p>(based on our 01_build_dataset.R script):</p>
+<p>1. Loading raw data from CSVs</p>
+<p>2. Calculating air/sea shares</p>
+<p>3. Merging with Macroeconomic indicators</p>
+<p>4. Saving as .RData for reproducibility</p>
+<p>In your local environment, run ‘R/01_build_dataset.R’</p>
+<p>to generate the ‘trnc_panel.csv’ used in the next pages.</p>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -757,19 +766,6 @@ ul.task-list li input[type="checkbox"] {
   });
   </script>
 </div> <!-- /content -->
-<footer class="footer">
-  <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center">
-<p>Hacettepe IE - EMU 430 - Fall 2024</p>
-</div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
-  </div>
-</footer>
 
 
 

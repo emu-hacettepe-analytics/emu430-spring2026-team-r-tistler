@@ -2,4 +2,30 @@
 title: "Data"
 ---
 
-Data source: xxx
+## About the Dataset
+
+Our project focuses on the tourism sector of the **Turkish Republic of Northern Cyprus (TRNC)**\[cite: 6\]. \[cite_start\]We analyze a multi-source dataset that covers the period between **2015 and 2024**, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.
+
+### Why This Data?
+
+We chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our **objectives** are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.
+
+### Data Sources
+
+The dataset was compiled from several official institutions\[cite: 18\]: - \[cite_start\]**TRNC Tourism Planning Department:** Statistical Yearbook 2024\[cite: 19\]. - \[cite_start\]**TRNC Statistical Institute:** Consumer price indices\[cite: 19\]. - \[cite_start\]**TCMB EVDS:** Exchange rate movements\[cite: 19\]. - \[cite_start\]**World Bank WDI:** Global macroeconomic indicators\[cite: 19\].
+
+### Data Import and Preparation
+
+To prepare the data for analysis, we followed a reproducible workflow in R:
+
+1\. **Importing:** We loaded raw CSV files (e.g., `trnc_panel_monthly.csv`) containing tourism and economic metrics.
+
+2\. **Cleaning & Tidying:** We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.
+
+3\. **Reshaping:** We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.
+
+### Final Dataset
+
+The final processed dataset is stored in `.RData` format for easy loading in R sessions.
+
+[**Download Final Project Data (.RData)**](data/processed/trnc_tourism.RData)

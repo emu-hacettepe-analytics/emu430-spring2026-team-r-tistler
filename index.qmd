@@ -1,5 +1,5 @@
 ---
-title: "Team XXX"
+title: "Team R'tistler"
 sidebar: false 
 ---
 
@@ -7,18 +7,16 @@ This is our project webpage.
 
 Please stay tuned to follow our project activities.
 
-This is our template.
-
 # Team Members
 
-1.  [Edin_Džeko](https://tr.wikipedia.org/wiki/Edin_D%C5%BEeko)
-
-2.  [Dušan Tadić](https://tr.wikipedia.org/wiki/Du%C5%A1an_Tadi%C4%87)
-
-3.  [Frederico Rodrigues de Paula Santos](https://tr.wikipedia.org/wiki/Fred_(1993_do%C4%9Fumlu_futbolcu))
-
-4.  [Sebastian Szymański](https://tr.wikipedia.org/wiki/Sebastian_Szyma%C5%84ski)
+-   [Eda CAN](https://github.com/edaacanlab)
+-   [Başak ÖZER](https://github.com/basakozer)
+-   [Cihangir Alperen TOKGÖZ](https://github.com/cihangiralperen)
+-   [Ece Özlem ÖZCAN](https://github.com/eceozcann)
+-   [Sena SİVRİKAYA](https://github.com/senasivrikaya)
 
 # Project Topic
+
+This project examines the development of the tourism sector in the Turkish Republic of Northern Cyprus (TRNC) between 2015 and 2024. Our analysis focuses on tourist flows, accommodation statistics, and the relationship between these indicators and macroeconomic variables such as inflation and exchange rates. Specifically, the impact of the COVID-19 pandemic on the sector and the subsequent recovery process are analyzed through a data-driven approach.
 
 # Data Set

@@ -12,5 +12,19 @@
     "title": "About",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "Data source:"
+  },
+  {
+    "objectID": "data.html#our-dataset",
+    "href": "data.html#our-dataset",
+    "title": "Data",
+    "section": "Our Dataset",
+    "text": "Our Dataset\nOur project utilizes a comprehensive dataset combining tourism indicators and macroeconomic variables for Northern Cyprus (TRNC) covering the period 2015–2024.\n\nData Sources\nTo ensure a robust analysis, we merged data from multiple official sources: - Tourism Statistics: Total arrivals, bednights, occupancy rates, and average length of stay were obtained from the TRNC Tourism Planning Department Statistical Yearbooks. - Macroeconomic Indicators: - Consumer Price Index (CPI) for TRNC was sourced from the TRNC Statistical Institute. - Turkey’s annual inflation rates (CPI YoY%) were retrieved from the World Bank WDI. - Exchange rates (EUR/TRY and USD/TRY) were collected from TCMB EVDS and World Bank records.\n\n\nWhy This Dataset?\nTourism is a cornerstone of the TRNC economy, yet it is highly vulnerable to external shocks. We chose this dataset to investigate: 1. The quantitative impact of the COVID-19 pandemic. 2. How the fluctuations in the Turkish Lira affect the attractiveness of Northern Cyprus as a destination. 3. The relationship between inflationary pressures in Turkey and visitor behavior in TRNC.\n\n\nData Preparation (Preprocessing)\nThe following R code (collapsible) shows how we cleaned the raw data, handled missing values for certain CPI sub-indices, and merged different tables into a single unified panel dataset for analysis.\n\n\nLoading necessary library\nlibrary(tidyverse)\nThe code below is a simplified version of our preprocessing pipeline\n(based on our 01_build_dataset.R script):\n1. Loading raw data from CSVs\n2. Calculating air/sea shares\n3. Merging with Macroeconomic indicators\n4. Saving as .RData for reproducibility\nIn your local environment, run ‘R/01_build_dataset.R’\nto generate the ‘trnc_panel.csv’ used in the next pages."
   }
 ]
