@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Analysis – xxx’ Project Lab</title>
+<title>Analysis – R’tistler Project Labzo</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -107,6 +107,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<script src="site_libs/plotly-binding-4.12.0/plotly.js"></script>
+<script src="site_libs/typedarray-0.1/typedarray.min.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
+<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="site_libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet">
+<script src="site_libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -284,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">xxx’ Project Lab</span>
+    <span class="navbar-title">R’tistler Project Labzo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -318,7 +327,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#summary" id="toc-summary" class="nav-link active" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#exploratory-data-analysis-eda" id="toc-exploratory-data-analysis-eda" class="nav-link" data-scroll-target="#exploratory-data-analysis-eda">1. Exploratory Data Analysis (EDA)</a>
+  <ul class="collapse">
+  <li><a href="#trend-identification-the-v-shape-recovery" id="toc-trend-identification-the-v-shape-recovery" class="nav-link" data-scroll-target="#trend-identification-the-v-shape-recovery">1.1 Trend Identification &amp; The “V-Shape” Recovery</a></li>
+  <li><a href="#step-by-step-interpretation" id="toc-step-by-step-interpretation" class="nav-link" data-scroll-target="#step-by-step-interpretation"><strong>Step-by-Step Interpretation</strong>:</a></li>
+  </ul></li>
+  <li><a href="#infrastructure-performance-occupancy-rates" id="toc-infrastructure-performance-occupancy-rates" class="nav-link" data-scroll-target="#infrastructure-performance-occupancy-rates">1.2 Infrastructure Performance: Occupancy Rates</a>
+  <ul class="collapse">
+  <li><a href="#key-insight" id="toc-key-insight" class="nav-link" data-scroll-target="#key-insight">Key Insight:</a></li>
+  </ul></li>
+  <li><a href="#statistical-insights-macroeconomic-drivers" id="toc-statistical-insights-macroeconomic-drivers" class="nav-link" data-scroll-target="#statistical-insights-macroeconomic-drivers">2. Statistical Insights &amp; Macroeconomic Drivers</a></li>
+  <li><a href="#the-inflation-sensitivity" id="toc-the-inflation-sensitivity" class="nav-link" data-scroll-target="#the-inflation-sensitivity">2.1 The Inflation Sensitivity</a></li>
+  <li><a href="#the-currency-advantage-eurtry" id="toc-the-currency-advantage-eurtry" class="nav-link" data-scroll-target="#the-currency-advantage-eurtry">2.2 The Currency Advantage (EUR/TRY)</a></li>
+  <li><a href="#visualizing-the-correlation-the-why-matrix" id="toc-visualizing-the-correlation-the-why-matrix" class="nav-link" data-scroll-target="#visualizing-the-correlation-the-why-matrix"><strong>2.3 Visualizing the Correlation (The “Why” Matrix)</strong></a></li>
+  <li><a href="#strategic-growth-projection-2025-2027" id="toc-strategic-growth-projection-2025-2027" class="nav-link" data-scroll-target="#strategic-growth-projection-2025-2027"><strong>2.4</strong> Strategic Growth Projection (2025-2027)</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">3. Conclusion</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
@@ -347,15 +377,166 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>About this site</p>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<p>This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024.</p>
+<hr>
+</section>
+<section id="exploratory-data-analysis-eda" class="level2">
+<h2 class="anchored" data-anchor-id="exploratory-data-analysis-eda">1. Exploratory Data Analysis (EDA)</h2>
+<section id="trend-identification-the-v-shape-recovery" class="level3">
+<h3 class="anchored" data-anchor-id="trend-identification-the-v-shape-recovery">1.1 Trend Identification &amp; The “V-Shape” Recovery</h3>
+<p>Our primary focus is the annual tourist inflow. The visualization below highlights the sector’s trajectory through three distinct eras: <strong>Pre-Pandemic Growth, The COVID-19 Collapse, and The Record-Breaking Recovery.</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<details class="code-fold">
+<summary>Technical Analysis (R Code)</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>panel <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/processed/trnc_panel.csv"</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(panel, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> arrivals_total)) <span class="sc">+</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">fill =</span> <span class="st">"#ffb6c1"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span>) <span class="sc">+</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#d63384"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#d63384"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Total Annual Arrivals (Interactive)"</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplotly</span>(p)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="plotly html-widget html-fill-item" id="htmlwidget-9ce9c7ee7f61d722cd6d" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-9ce9c7ee7f61d722cd6d">{"x":{"data":[{"x":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2024,2024,2023,2022,2021,2020,2019,2018,2017,2016,2015,2015],"y":[0,0,0,0,0,0,0,0,0,0,0,2556605,2122273,1634560,638151,467647,2068992,2079961,2045014,1862558,1773965,0],"text":["year: 2015<br />arrivals_total: 1773965","year: 2016<br />arrivals_total: 1862558","year: 2017<br />arrivals_total: 2045014","year: 2018<br />arrivals_total: 2079961","year: 2019<br />arrivals_total: 2068992","year: 2020<br />arrivals_total:  467647","year: 2021<br />arrivals_total:  638151","year: 2022<br />arrivals_total: 1634560","year: 2023<br />arrivals_total: 2122273","year: 2024<br />arrivals_total: 2556605","year: 2024<br />arrivals_total: 2556605","year: 2024<br />arrivals_total: 2556605","year: 2023<br />arrivals_total: 2122273","year: 2022<br />arrivals_total: 1634560","year: 2021<br />arrivals_total:  638151","year: 2020<br />arrivals_total:  467647","year: 2019<br />arrivals_total: 2068992","year: 2018<br />arrivals_total: 2079961","year: 2017<br />arrivals_total: 2045014","year: 2016<br />arrivals_total: 1862558","year: 2015<br />arrivals_total: 1773965","year: 2015<br />arrivals_total: 1773965"],"type":"scatter","mode":"lines","line":{"width":1.8897637795275593,"color":"transparent","dash":"solid"},"fill":"toself","fillcolor":"rgba(255,182,193,0.4)","hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","frame":null},{"x":[2015,2016,2017,2018,2019,2020,2021,2022,2023,2024],"y":[1773965,1862558,2045014,2079961,2068992,467647,638151,1634560,2122273,2556605],"text":["year: 2015<br />arrivals_total: 1773965","year: 2016<br />arrivals_total: 1862558","year: 2017<br />arrivals_total: 2045014","year: 2018<br />arrivals_total: 2079961","year: 2019<br />arrivals_total: 2068992","year: 2020<br />arrivals_total:  467647","year: 2021<br />arrivals_total:  638151","year: 2022<br />arrivals_total: 1634560","year: 2023<br />arrivals_total: 2122273","year: 2024<br />arrivals_total: 2556605"],"type":"scatter","mode":"lines+markers","line":{"width":4.5354330708661417,"color":"rgba(214,51,132,1)","dash":"solid"},"hoveron":"points","showlegend":false,"xaxis":"x","yaxis":"y","hoverinfo":"text","marker":{"autocolorscale":false,"color":"rgba(214,51,132,1)","opacity":1,"size":11.338582677165356,"symbol":"circle","line":{"width":1.8897637795275593,"color":"rgba(214,51,132,1)"}},"frame":null}],"layout":{"margin":{"t":40.840182648401829,"r":7.3059360730593621,"b":37.260273972602747,"l":78.173515981735179},"paper_bgcolor":"rgba(255,255,255,1)","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724},"title":{"text":"Total Annual Arrivals (Interactive)","font":{"color":"rgba(0,0,0,1)","family":"","size":17.534246575342465},"x":0,"xref":"paper"},"xaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[2014.55,2024.45],"tickmode":"array","ticktext":["2015.0","2017.5","2020.0","2022.5"],"tickvals":[2015,2017.5,2020,2022.5],"categoryorder":"array","categoryarray":["2015.0","2017.5","2020.0","2022.5"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"y","title":{"text":"year","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"yaxis":{"domain":[0,1],"automargin":true,"type":"linear","autorange":false,"range":[-127830.25,2684435.25],"tickmode":"array","ticktext":["0","1,000,000","2,000,000"],"tickvals":[0,1000000,2000000],"categoryorder":"array","categoryarray":["0","1,000,000","2,000,000"],"nticks":null,"ticks":"","tickcolor":null,"ticklen":3.6529680365296811,"tickwidth":0,"showticklabels":true,"tickfont":{"color":"rgba(77,77,77,1)","family":"","size":11.68949771689498},"tickangle":-0,"showline":false,"linecolor":null,"linewidth":0,"showgrid":true,"gridcolor":"rgba(235,235,235,1)","gridwidth":0.66417600664176002,"zeroline":false,"anchor":"x","title":{"text":"arrivals_total","font":{"color":"rgba(0,0,0,1)","family":"","size":14.611872146118724}},"hoverformat":".2f"},"shapes":[],"showlegend":false,"legend":{"bgcolor":null,"bordercolor":null,"borderwidth":0,"font":{"color":"rgba(0,0,0,1)","family":"","size":11.68949771689498}},"hovermode":"closest","barmode":"relative"},"config":{"doubleClick":"reset","modeBarButtonsToAdd":["hoverclosest","hovercompare"],"showSendToCloud":false},"source":"A","attrs":{"dd036a2f518f":{"x":{},"y":{},"type":"scatter"},"dd034893b9bf":{"x":{},"y":{}},"dd035a87cfd2":{"x":{},"y":{}}},"cur_data":"dd036a2f518f","visdat":{"dd036a2f518f":["function (y) ","x"],"dd034893b9bf":["function (y) ","x"],"dd035a87cfd2":["function (y) ","x"]},"highlight":{"on":"plotly_click","persistent":false,"dynamic":false,"selectize":false,"opacityDim":0.20000000000000001,"selected":{"opacity":1},"debounce":0},"shinyEvents":["plotly_hover","plotly_click","plotly_selected","plotly_relayout","plotly_brushed","plotly_brushing","plotly_clickannotation","plotly_doubleclick","plotly_deselect","plotly_afterplot","plotly_sunburstclick"],"base_url":"https://plot.ly"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
+</section>
+<section id="step-by-step-interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="step-by-step-interpretation"><strong>Step-by-Step Interpretation</strong>:</h3>
+<p><strong>Baseline (2015-2019):</strong> A consistent upward trend, peaking at 2.1M arrivals before the global crisis.</p>
+<p><strong>The Shock (2020):</strong> A massive drop to approx. 470k arrivals, a nearly 77% decrease, testing the sector’s operational survival.</p>
+<p><strong>The Surge (2024):</strong> A record-breaking 2.56 million arrivals. This exceeds pre-pandemic levels by 24%, indicating a strong “revenge tourism” effect and successful market adaptation.</p>
+</section>
+</section>
+<section id="infrastructure-performance-occupancy-rates" class="level2">
+<h2 class="anchored" data-anchor-id="infrastructure-performance-occupancy-rates">1.2 Infrastructure Performance: Occupancy Rates</h2>
+<p>To measure efficiency, we analyze the Hotel Occupancy Rate. This metric tells us if the increase in tourist numbers is reflected in hotel utilization.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Technical Analysis (R Code)</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(panel, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> occupancy_pct)) <span class="sc">+</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#d63384"</span>, <span class="at">alpha =</span> <span class="fl">0.6</span>, <span class="at">width =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">paste0</span>(occupancy_pct, <span class="st">"%"</span>)), <span class="at">vjust =</span> <span class="sc">-</span><span class="fl">0.5</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">2015</span><span class="sc">:</span><span class="dv">2024</span>) <span class="sc">+</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Annual Hotel Occupancy (%)"</span>,</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Occupancy Rate"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="key-insight" class="level3">
+<h3 class="anchored" data-anchor-id="key-insight">Key Insight:</h3>
+<p>Interestingly, while arrivals are at a record high in 2024, occupancy (43.6%) has not yet reached the 2017 peak (58.5%). This suggests a significant increase in total bed capacity or a shift towards alternative accommodations like short-term rentals.</p>
+</section>
+</section>
+<section id="statistical-insights-macroeconomic-drivers" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-insights-macroeconomic-drivers">2. Statistical Insights &amp; Macroeconomic Drivers</h2>
+<p>In this step, we analyze the “why” behind the numbers, focusing on the correlation between the economy and tourism.</p>
+</section>
+<section id="the-inflation-sensitivity" class="level2">
+<h2 class="anchored" data-anchor-id="the-inflation-sensitivity">2.1 The Inflation Sensitivity</h2>
+<p>The TRNC tourism market is highly sensitive to Turkey’s CPI (Inflation). As inflation rises in the source market, discretionary travel spending decreases. This explains the volatility seen in years of high economic pressure in Turkey.</p>
+</section>
+<section id="the-currency-advantage-eurtry" class="level2">
+<h2 class="anchored" data-anchor-id="the-currency-advantage-eurtry">2.2 The Currency Advantage (EUR/TRY)</h2>
+<p>The depreciation of the Turkish Lira creates a “Price Advantage” for international markets.</p>
+<p><strong>Foreign Markets:</strong> North Cyprus becomes a high-value, low-cost destination for Euro and Dollar earners.</p>
+<p><strong>Local Strategy:</strong> This FX effect is a primary driver behind the record-breaking arrival numbers in 2023 and 2024.</p>
+</section>
+<section id="visualizing-the-correlation-the-why-matrix" class="level2">
+<h2 class="anchored" data-anchor-id="visualizing-the-correlation-the-why-matrix"><strong>2.3 Visualizing the Correlation (The “Why” Matrix)</strong></h2>
+<p>To quantify these relationships, we calculated a correlation matrix between arrivals and macroeconomic drivers.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Click to see Correlation Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reshape2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>cor_data <span class="ot">&lt;-</span> panel <span class="sc">%&gt;%</span> <span class="fu">select</span>(arrivals_total, occupancy_pct, eur_try, cpi_turkey_yoy)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(cor_data, <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>melted_cor <span class="ot">&lt;-</span> <span class="fu">melt</span>(cor_matrix)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(melted_cor, <span class="fu">aes</span>(Var1, Var2, <span class="at">fill =</span> value)) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"#d63384"</span>, <span class="at">high =</span> <span class="st">"#ffb6c1"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">midpoint =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(value, <span class="dv">2</span>)), <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">size =</span> <span class="dv">4</span>) <span class="sc">+</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Economic Driver Correlation Matrix"</span>, <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A strong positive correlation (near 0.85) with EUR/TRY confirms that as the Euro strengthens, tourism arrivals significantly increase.</p>
+</section>
+<section id="strategic-growth-projection-2025-2027" class="level2">
+<h2 class="anchored" data-anchor-id="strategic-growth-projection-2025-2027"><strong>2.4</strong> Strategic Growth Projection (2025-2027)</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Technical Analysis (R Code)</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model_post_covid <span class="ot">&lt;-</span> <span class="fu">lm</span>(arrivals_total <span class="sc">~</span> year, <span class="at">data =</span> panel <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2022</span>))</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>forecast_2027 <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_post_covid, <span class="at">newdata =</span> <span class="fu">data.frame</span>(<span class="at">year =</span> <span class="dv">2027</span>))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(panel, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> arrivals_total)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"#d63384"</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">data =</span> panel <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">2022</span>), <span class="at">method =</span> <span class="st">"lm"</span>, </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#d63384"</span>, <span class="at">fill =</span> <span class="st">"#ffb6c1"</span>, <span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">fullrange =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"point"</span>, <span class="at">x =</span> <span class="dv">2027</span>, <span class="at">y =</span> forecast_2027, <span class="at">color =</span> <span class="st">"#007bff"</span>, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2026.8</span>, <span class="at">y =</span> forecast_2027, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">label =</span> <span class="fu">paste</span>(<span class="st">"2027 Target:"</span>, <span class="fu">label_comma</span>()(<span class="fu">round</span>(forecast_2027))), </span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">hjust =</span> <span class="fl">1.1</span>, <span class="at">vjust =</span> <span class="fl">1.5</span>, <span class="at">color =</span> <span class="st">"#007bff"</span>, <span class="at">fontface =</span> <span class="st">"bold"</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_comma</span>(), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4500000</span>)) <span class="sc">+</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">2015</span>, <span class="dv">2027</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Strategic Forecast for 2027 (Post-Pandemic Momentum)"</span>,</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">subtitle =</span> <span class="st">"Projecting target volumes based on 2022-2024 recovery speed"</span>,</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">y =</span> <span class="st">"Projected Arrivals"</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="analysis_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><u><strong>Methodological Note &amp; Data Limitations:</strong></u></p>
+<ul>
+<li><p><strong>Data Horizon:</strong>&nbsp;Our official dataset concludes in&nbsp;<strong>December 2024</strong>. The values presented for 2025, 2026, and 2027 are statistical projections, not observed facts.</p></li>
+<li><p><strong>Assumption of Continuity:</strong>&nbsp;This model utilizes&nbsp;<strong>linear extrapolation</strong>, assuming that the structural and economic recovery observed post-2022 will maintain its momentum without new external shocks.</p></li>
+<li><p><strong>Analytical Purpose:</strong>&nbsp;This projection serves as a benchmark for infrastructure planning. It answers the question:&nbsp;<em>“If the current growth trend holds, will our 2027 capacity be sufficient for the expected 2.8M visitors?”</em></p>
+<p><strong>Note on Optimized Methodology:</strong>&nbsp;In this updated model, we specifically filtered the data to focus on the&nbsp;<strong>post-2022 recovery period</strong>. Including the extreme outliers of the 2020-2021 pandemic would statistically underestimate the current market momentum. By focusing on the recent 3-year “V-Shape” velocity, our 2027 projection reflects a more realistic growth target for the industry’s current trajectory.</p></li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">3. Conclusion</h2>
+<p>The data proves that the TRNC tourism sector is resilient but remains vulnerable to macroeconomic shifts in Turkey. Future strategies should prioritize Market Diversification to maintain growth during inflationary cycles.</p>
 
 
+</section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -778,7 +959,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       &nbsp;
     </div>   
     <div class="nav-footer-center">
-<p>Hacettepe IE - EMU 430 - Fall 2024</p>
+<p>Hacettepe IE - EMU 430 - Spring 2026</p>
 </div>
     <div class="nav-footer-right">
       &nbsp;

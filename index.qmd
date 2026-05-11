@@ -3,11 +3,19 @@ title: "Team R'tistler"
 sidebar: false 
 ---
 
-This is our project webpage.
+# Welcome to the Creative Lab of R'tistler
 
-Please stay tuned to follow our project activities.
+::: {style="text-align: center; margin: 20px 0;"}
+![](images/mikeoo.gif){alt="Hello Stitch" style="border-radius: 20px; border: 3px solid #fbcfe8;"}
 
-# Team Members
+<p style="font-weight: bold; color: #be185d; margin-top: 10px;">
+
+Hi! 🌺
+
+</p>
+:::
+
+# The "R'tist" Crew
 
 -   [Eda CAN](https://github.com/edaacanlab)
 -   [Başak ÖZER](https://github.com/basakozer)
@@ -15,8 +23,18 @@ Please stay tuned to follow our project activities.
 -   [Ece Özlem ÖZCAN](https://github.com/eceozcann)
 -   [Sena SİVRİKAYA](https://github.com/senasivrikaya)
 
-# Project Topic
+# Our Mission: Decoding TRNC Tourism 🏝️
 
-This project examines the development of the tourism sector in the Turkish Republic of Northern Cyprus (TRNC) between 2015 and 2024. Our analysis focuses on tourist flows, accommodation statistics, and the relationship between these indicators and macroeconomic variables such as inflation and exchange rates. Specifically, the impact of the COVID-19 pandemic on the sector and the subsequent recovery process are analyzed through a data-driven approach.
+Between **2015 and 2024**, the TRNC tourism sector has been on a rollercoaster. Our mission is to analyze:
 
-# Data Set
+**The V-Shape Recovery:** How we bounced back from COVID-19.
+
+**The Economy Filter:** How inflation and exchange rates dance with tourist numbers.
+
+**The Infrastructure Puzzle:** Making sense of bednights and occupancy.
+
+::: callout-tip
+## Ready to see the magic?
+
+Check out our [**Interactive Analysis**](analysis.qmd) to play with the data yourself!
+:::

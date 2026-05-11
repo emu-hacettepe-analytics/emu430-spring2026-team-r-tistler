@@ -4,7 +4,7 @@ title: "Data"
 
 ## About the Dataset
 
-Our project focuses on the tourism sector of the **Turkish Republic of Northern Cyprus (TRNC)**\[cite: 6\]. \[cite_start\]We analyze a multi-source dataset that covers the period between **2015 and 2024**, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.
+Our project focuses on the tourism sector of the **Turkish Republic of Northern Cyprus (TRNC)**. We analyze a multi-source dataset that covers the period between **2015 and 2024**, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.
 
 ### Why This Data?
 
@@ -12,7 +12,15 @@ We chose this topic because tourism is a vital sector for the TRNC economy, yet 
 
 ### Data Sources
 
-The dataset was compiled from several official institutions\[cite: 18\]: - \[cite_start\]**TRNC Tourism Planning Department:** Statistical Yearbook 2024\[cite: 19\]. - \[cite_start\]**TRNC Statistical Institute:** Consumer price indices\[cite: 19\]. - \[cite_start\]**TCMB EVDS:** Exchange rate movements\[cite: 19\]. - \[cite_start\]**World Bank WDI:** Global macroeconomic indicators\[cite: 19\].
+The dataset was compiled from several official institutions.
+
+**TRNC Tourism Planning Department:** Statistical Yearbook 2024
+
+**TRNC Statistical Institute:** Consumer price indices
+
+**TCMB EVDS:** Exchange rate movements
+
+**World Bank WDI:** Global macroeconomic indicators
 
 ### Data Import and Preparation
 
@@ -28,4 +36,4 @@ To prepare the data for analysis, we followed a reproducible workflow in R:
 
 The final processed dataset is stored in `.RData` format for easy loading in R sessions.
 
-[**Download Final Project Data (.RData)**](data/processed/trnc_tourism.RData)
+-   [Download TRNC Tourism Data (.RData)](data/processed/trnc_tourism.RData){download="trnc_tourism.RData"}

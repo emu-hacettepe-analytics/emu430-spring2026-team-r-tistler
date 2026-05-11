@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Team R’tistler",
     "section": "",
-    "text": "This is our project webpage.\nPlease stay tuned to follow our project activities.\n\nTeam Members\n\nEda CAN\nBaşak ÖZER\nCihangir Alperen TOKGÖZ\nEce Özlem ÖZCAN\nSena SİVRİKAYA\n\n\n\nProject Topic\nThis project examines the development of the tourism sector in the Turkish Republic of Northern Cyprus (TRNC) between 2015 and 2024. Our analysis focuses on tourist flows, accommodation statistics, and the relationship between these indicators and macroeconomic variables such as inflation and exchange rates. Specifically, the impact of the COVID-19 pandemic on the sector and the subsequent recovery process are analyzed through a data-driven approach.\n\n\nData Set\n\n\n\n\n Back to top"
+    "text": "Welcome to the Creative Lab of R’tistler\n\n\n\nHi! 🌺\n\n\n\n\nThe “R’tist” Crew\n\nEda CAN\nBaşak ÖZER\nCihangir Alperen TOKGÖZ\nEce Özlem ÖZCAN\nSena SİVRİKAYA\n\n\n\nOur Mission: Decoding TRNC Tourism 🏝️\nBetween 2015 and 2024, the TRNC tourism sector has been on a rollercoaster. Our mission is to analyze:\nThe V-Shape Recovery: How we bounced back from COVID-19.\nThe Economy Filter: How inflation and exchange rates dance with tourist numbers.\nThe Infrastructure Puzzle: Making sense of bednights and occupancy.\n\n\n\n\n\n\nTipReady to see the magic?\n\n\n\nCheck out our Interactive Analysis to play with the data yourself!\n\n\n\n\n\n\n Back to top"
   },
   {
     "objectID": "about.html",
@@ -18,14 +18,14 @@
     "href": "analysis.html",
     "title": "Analysis",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
+    "text": "This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024."
   },
   {
     "objectID": "data.html",
     "href": "data.html",
     "title": "Data",
     "section": "",
-    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC)[cite: 6]. [cite_start]We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions[cite: 18]: - [cite_start]TRNC Tourism Planning Department: Statistical Yearbook 2024[cite: 19]. - [cite_start]TRNC Statistical Institute: Consumer price indices[cite: 19]. - [cite_start]TCMB EVDS: Exchange rate movements[cite: 19]. - [cite_start]World Bank WDI: Global macroeconomic indicators[cite: 19].\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\nDownload Final Project Data (.RData)"
+    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC). We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions.\nTRNC Tourism Planning Department: Statistical Yearbook 2024\nTRNC Statistical Institute: Consumer price indices\nTCMB EVDS: Exchange rate movements\nWorld Bank WDI: Global macroeconomic indicators\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\n\nDownload TRNC Tourism Data (.RData)"
   },
   {
     "objectID": "data.html#our-dataset",
@@ -39,6 +39,146 @@
     "href": "data.html#about-the-dataset",
     "title": "Data",
     "section": "",
-    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC)[cite: 6]. [cite_start]We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions[cite: 18]: - [cite_start]TRNC Tourism Planning Department: Statistical Yearbook 2024[cite: 19]. - [cite_start]TRNC Statistical Institute: Consumer price indices[cite: 19]. - [cite_start]TCMB EVDS: Exchange rate movements[cite: 19]. - [cite_start]World Bank WDI: Global macroeconomic indicators[cite: 19].\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\nDownload Final Project Data (.RData)"
+    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC). We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions.\nTRNC Tourism Planning Department: Statistical Yearbook 2024\nTRNC Statistical Institute: Consumer price indices\nTCMB EVDS: Exchange rate movements\nWorld Bank WDI: Global macroeconomic indicators\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\n\nDownload TRNC Tourism Data (.RData)"
+  },
+  {
+    "objectID": "analysis.html#key-takeaways",
+    "href": "analysis.html#key-takeaways",
+    "title": "Analysis",
+    "section": "",
+    "text": "Our analysis reveals several critical insights about the TRNC tourism sector:\n\nV-Shaped Recovery: Total arrivals reached a record peak of 2.56 million in 2024.\nMacroeconomic Link: High inflation in Turkey is negatively associated with tourist arrivals.\nCurrency Factor: The depreciation of the Lira increases the competitiveness of TRNC for international markets."
+  },
+  {
+    "objectID": "analysis.html#exploratory-data-analysis-eda",
+    "href": "analysis.html#exploratory-data-analysis-eda",
+    "title": "Analysis",
+    "section": "1. Exploratory Data Analysis (EDA)",
+    "text": "1. Exploratory Data Analysis (EDA)\n\n1.1 Trend Identification & The “V-Shape” Recovery\nOur primary focus is the annual tourist inflow. The visualization below highlights the sector’s trajectory through three distinct eras: Pre-Pandemic Growth, The COVID-19 Collapse, and The Record-Breaking Recovery.\n\n\nTechnical Analysis (R Code)\nlibrary(tidyverse)\nlibrary(plotly)\nlibrary(scales)\n\npanel &lt;- read_csv(\"data/processed/trnc_panel.csv\")\n\np &lt;- ggplot(panel, aes(x = year, y = arrivals_total)) +\n  geom_area(fill = \"#ffb6c1\", alpha = 0.4) +\n  geom_line(color = \"#d63384\", size = 1.2) +\n  geom_point(color = \"#d63384\", size = 3) +\n  scale_y_continuous(labels = label_comma()) +\n  theme_minimal() +\n  labs(title = \"Total Annual Arrivals (Interactive)\")\nggplotly(p)\n\n\n\n\n\n\n\n\nStep-by-Step Interpretation:\nBaseline (2015-2019): A consistent upward trend, peaking at 2.1M arrivals before the global crisis.\nThe Shock (2020): A massive drop to approx. 470k arrivals, a nearly 77% decrease, testing the sector’s operational survival.\nThe Surge (2024): A record-breaking 2.56 million arrivals. This exceeds pre-pandemic levels by 24%, indicating a strong “revenge tourism” effect and successful market adaptation."
+  },
+  {
+    "objectID": "analysis.html#exploratory-data-analysis",
+    "href": "analysis.html#exploratory-data-analysis",
+    "title": "Analysis",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(scales)\n\n# Veriyi çekiyoruz\npanel &lt;- read_csv(\"data/processed/trnc_panel.csv\")\n\n# Grafik kodu\nggplot(panel, aes(x = year, y = arrivals_total)) +\n  geom_area(fill = \"#ffb6c1\", alpha = 0.4) +\n  geom_line(color = \"#d63384\", size = 1.2) +\n  geom_point(color = \"#d63384\", size = 3) +\n  scale_y_continuous(labels = comma) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "analysis.html#technical-check",
+    "href": "analysis.html#technical-check",
+    "title": "Analysis",
+    "section": "",
+    "text": "```{r}\nlibrary(tidyverse)\nlibrary(scales)"
+  },
+  {
+    "objectID": "analysis.html#step-1-exploratory-data-analysis-eda",
+    "href": "analysis.html#step-1-exploratory-data-analysis-eda",
+    "title": "Analysis",
+    "section": "Step 1: Exploratory Data Analysis (EDA)",
+    "text": "Step 1: Exploratory Data Analysis (EDA)\nThe first step focuses on visualizing arrival trends to understand the pandemic’s impact and the subsequent recovery.\n\n\nClick to see the R code\nlibrary(tidyverse)\nlibrary(scales)\n\n# Loading the dataset\npanel &lt;- read_csv(\"data/processed/trnc_panel.csv\")\n\n# Visualization with pink aesthetics\nggplot(panel, aes(x = year, y = arrivals_total)) +\n  geom_area(fill = \"#ffb6c1\", alpha = 0.4) +\n  geom_line(color = \"#d63384\", size = 1.2) +\n  geom_point(color = \"#d63384\", size = 3) +\n  scale_y_continuous(labels = label_comma()) +\n  labs(\n    title = \"Total Tourist Arrivals in TRNC (2015-2024)\",\n    x = \"Year\", y = \"Total Arrivals\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "analysis.html#step-2-occupancy-rate-analysis",
+    "href": "analysis.html#step-2-occupancy-rate-analysis",
+    "title": "Analysis",
+    "section": "Step 2: Occupancy Rate Analysis",
+    "text": "Step 2: Occupancy Rate Analysis\nBeyond total arrivals, we must look at how efficiently the tourism infrastructure (hotels) is being used. Occupancy rates tell us if the surge in arrivals is translating into filled beds.\n\n\nClick to see the R code\n# Step 2.1: Plotting Hotel Occupancy (%)\nggplot(panel, aes(x = year, y = occupancy_pct)) +\n  geom_col(fill = \"#d63384\", alpha = 0.7) +\n  geom_text(aes(label = paste0(occupancy_pct, \"%\")), vjust = -0.5, fontface = \"bold\") +\n  labs(\n    title = \"Annual Hotel Occupancy Rates\",\n    x = \"Year\", y = \"Occupancy (%)\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "analysis.html#step-3-statistical-modeling",
+    "href": "analysis.html#step-3-statistical-modeling",
+    "title": "Analysis",
+    "section": "Step 3: Statistical Modeling",
+    "text": "Step 3: Statistical Modeling\nThe final step is to understand the correlation between macroeconomic variables and tourism activity.\nCorrelation: Our data shows a strong negative relationship between Turkey’s CPI and arrivals, meaning as prices rise in Turkey, arrivals tend to slow down.\nCurrency Effect: There is a positive correlation between the EUR/TRY exchange rate and international arrivals, highlighting the price advantage for European tourists."
+  },
+  {
+    "objectID": "analysis.html#conclusion",
+    "href": "analysis.html#conclusion",
+    "title": "Analysis",
+    "section": "3. Conclusion",
+    "text": "3. Conclusion\nThe data proves that the TRNC tourism sector is resilient but remains vulnerable to macroeconomic shifts in Turkey. Future strategies should prioritize Market Diversification to maintain growth during inflationary cycles."
+  },
+  {
+    "objectID": "analysis.html#executive-summary",
+    "href": "analysis.html#executive-summary",
+    "title": "Analysis",
+    "section": "",
+    "text": "This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024."
+  },
+  {
+    "objectID": "analysis.html#step-by-step-interpretation",
+    "href": "analysis.html#step-by-step-interpretation",
+    "title": "Analysis",
+    "section": "Step-by-Step Interpretation:",
+    "text": "Step-by-Step Interpretation:\nBaseline (2015-2019): A consistent upward trend, peaking at 2.1M arrivals before the global crisis.\nThe Shock (2020): A massive drop to approx. 470k arrivals, a nearly 77% decrease, testing the sector’s operational survival.\nThe Surge (2024): A record-breaking 2.56 million arrivals. This exceeds pre-pandemic levels by 24%, indicating a strong “revenge tourism” effect and successful market adaptation."
+  },
+  {
+    "objectID": "analysis.html#infrastructure-performance-occupancy-rates",
+    "href": "analysis.html#infrastructure-performance-occupancy-rates",
+    "title": "Analysis",
+    "section": "1.2 Infrastructure Performance: Occupancy Rates",
+    "text": "1.2 Infrastructure Performance: Occupancy Rates\nTo measure efficiency, we analyze the Hotel Occupancy Rate. This metric tells us if the increase in tourist numbers is reflected in hotel utilization.\n\n\nTechnical Analysis (R Code)\nggplot(panel, aes(x = year, y = occupancy_pct)) +\n  geom_col(fill = \"#d63384\", alpha = 0.6, width = 0.7) +\n  geom_text(aes(label = paste0(occupancy_pct, \"%\")), vjust = -0.5, fontface = \"bold\") +\n  scale_x_continuous(breaks = 2015:2024) +\n  labs(\n    title = \"Annual Hotel Occupancy (%)\",\n    x = \"Year\", y = \"Occupancy Rate\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\nKey Insight:\nInterestingly, while arrivals are at a record high in 2024, occupancy (43.6%) has not yet reached the 2017 peak (58.5%). This suggests a significant increase in total bed capacity or a shift towards alternative accommodations like short-term rentals."
+  },
+  {
+    "objectID": "analysis.html#key-insight",
+    "href": "analysis.html#key-insight",
+    "title": "Analysis",
+    "section": "Key Insight:",
+    "text": "Key Insight:\nInterestingly, while arrivals are at a record high in 2024, occupancy (43.6%) has not yet reached the 2017 peak (58.5%). This suggests a significant increase in total bed capacity or a shift towards alternative accommodations like short-term rentals."
+  },
+  {
+    "objectID": "analysis.html#statistical-insights-macroeconomic-drivers",
+    "href": "analysis.html#statistical-insights-macroeconomic-drivers",
+    "title": "Analysis",
+    "section": "2. Statistical Insights & Macroeconomic Drivers",
+    "text": "2. Statistical Insights & Macroeconomic Drivers\nIn this step, we analyze the “why” behind the numbers, focusing on the correlation between the economy and tourism."
+  },
+  {
+    "objectID": "analysis.html#the-inflation-sensitivity",
+    "href": "analysis.html#the-inflation-sensitivity",
+    "title": "Analysis",
+    "section": "2.1 The Inflation Sensitivity",
+    "text": "2.1 The Inflation Sensitivity\nThe TRNC tourism market is highly sensitive to Turkey’s CPI (Inflation). As inflation rises in the source market, discretionary travel spending decreases. This explains the volatility seen in years of high economic pressure in Turkey."
+  },
+  {
+    "objectID": "analysis.html#the-currency-advantage-eurtry",
+    "href": "analysis.html#the-currency-advantage-eurtry",
+    "title": "Analysis",
+    "section": "2.2 The Currency Advantage (EUR/TRY)",
+    "text": "2.2 The Currency Advantage (EUR/TRY)\nThe depreciation of the Turkish Lira creates a “Price Advantage” for international markets.\nForeign Markets: North Cyprus becomes a high-value, low-cost destination for Euro and Dollar earners.\nLocal Strategy: This FX effect is a primary driver behind the record-breaking arrival numbers in 2023 and 2024."
+  },
+  {
+    "objectID": "analysis.html#summary",
+    "href": "analysis.html#summary",
+    "title": "Analysis",
+    "section": "",
+    "text": "This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024."
+  },
+  {
+    "objectID": "analysis.html#visualizing-the-correlation-the-why-matrix",
+    "href": "analysis.html#visualizing-the-correlation-the-why-matrix",
+    "title": "Analysis",
+    "section": "2.3 Visualizing the Correlation (The “Why” Matrix)",
+    "text": "2.3 Visualizing the Correlation (The “Why” Matrix)\nTo quantify these relationships, we calculated a correlation matrix between arrivals and macroeconomic drivers.\n\n\nClick to see Correlation Code\nlibrary(reshape2)\n\ncor_data &lt;- panel %&gt;% select(arrivals_total, occupancy_pct, eur_try, cpi_turkey_yoy)\ncor_matrix &lt;- cor(cor_data, use = \"complete.obs\")\nmelted_cor &lt;- melt(cor_matrix)\n\nggplot(melted_cor, aes(Var1, Var2, fill = value)) +\ngeom_tile() +\nscale_fill_gradient2(low = \"#d63384\", high = \"#ffb6c1\", mid = \"white\", midpoint = 0) +\ngeom_text(aes(label = round(value, 2)), color = \"black\", size = 4) +\nlabs(title = \"Economic Driver Correlation Matrix\", x = \"\", y = \"\") +\ntheme_minimal()\n\n\n\n\n\n\n\n\n\nA strong positive correlation (near 0.85) with EUR/TRY confirms that as the Euro strengthens, tourism arrivals significantly increase."
+  },
+  {
+    "objectID": "analysis.html#forecasting-2025-where-are-we-heading",
+    "href": "analysis.html#forecasting-2025-where-are-we-heading",
+    "title": "Analysis",
+    "section": "2.4 Forecasting 2025: Where are we heading",
+    "text": "2.4 Forecasting 2025: Where are we heading\nBased on the linear growth trajectory observed in our dataset, we projected the arrivals for 2025. This helps us understand if the current infrastructure can handle the upcoming demand.\n\n\nClick to see Forecasting Code\nmodel &lt;- lm(arrivals_total ~ year, data = panel)\nforecast_2025 &lt;- predict(model, newdata = data.frame(year = 2025))\n\nggplot(panel, aes(x = year, y = arrivals_total)) +\ngeom_point(color = \"#d63384\") +\ngeom_smooth(method = \"lm\", color = \"#d63384\", fill = \"#ffb6c1\", alpha = 0.2) +\nannotate(\"point\", x = 2025, y = forecast_2025, color = \"blue\", size = 4, shape = 18) +\nannotate(\"text\", x = 2025, y = forecast_2025, label = paste(\"2025 Forecast:\", label_comma()(round(forecast_2025))), vjust = -2, color = \"blue\", fontface = \"bold\") +\nlabs(title = \"Arrivals Forecast for 2025\", subtitle = \"Linear growth projection based on historical data\", x = \"Year\", y = \"Projected Arrivals\") +\ntheme_minimal()"
+  },
+  {
+    "objectID": "analysis.html#strategic-growth-projection-2025-2027",
+    "href": "analysis.html#strategic-growth-projection-2025-2027",
+    "title": "Analysis",
+    "section": "2.4 Strategic Growth Projection (2025-2027)",
+    "text": "2.4 Strategic Growth Projection (2025-2027)\n\n\nTechnical Analysis (R Code)\nmodel_post_covid &lt;- lm(arrivals_total ~ year, data = panel %&gt;% filter(year &gt;= 2022))\nforecast_2027 &lt;- predict(model_post_covid, newdata = data.frame(year = 2027))\n\nggplot(panel, aes(x = year, y = arrivals_total)) +\n  geom_point(color = \"#d63384\", size = 3) +\n  geom_smooth(data = panel %&gt;% filter(year &gt;= 2022), method = \"lm\", \n              color = \"#d63384\", fill = \"#ffb6c1\", alpha = 0.2, fullrange = TRUE) +\n  annotate(\"point\", x = 2027, y = forecast_2027, color = \"#007bff\", size = 5, shape = 18) +\n  annotate(\"text\", x = 2026.8, y = forecast_2027, \n           label = paste(\"2027 Target:\", label_comma()(round(forecast_2027))), \n           hjust = 1.1, vjust = 1.5, color = \"#007bff\", fontface = \"bold\") +\n  scale_y_continuous(labels = label_comma(), limits = c(0, 4500000)) +\n  scale_x_continuous(breaks = seq(2015, 2027, 2)) +\n  labs(\n    title = \"Strategic Forecast for 2027 (Post-Pandemic Momentum)\",\n    subtitle = \"Projecting target volumes based on 2022-2024 recovery speed\",\n    x = \"Year\", y = \"Projected Arrivals\"\n  ) +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\nMethodological Note & Data Limitations:\n\nData Horizon: Our official dataset concludes in December 2024. The values presented for 2025, 2026, and 2027 are statistical projections, not observed facts.\nAssumption of Continuity: This model utilizes linear extrapolation, assuming that the structural and economic recovery observed post-2022 will maintain its momentum without new external shocks.\nAnalytical Purpose: This projection serves as a benchmark for infrastructure planning. It answers the question: “If the current growth trend holds, will our 2027 capacity be sufficient for the expected 2.8M visitors?”\nNote on Optimized Methodology: In this updated model, we specifically filtered the data to focus on the post-2022 recovery period. Including the extreme outliers of the 2020-2021 pandemic would statistically underestimate the current market momentum. By focusing on the recent 3-year “V-Shape” velocity, our 2027 projection reflects a more realistic growth target for the industry’s current trajectory."
+  },
+  {
+    "objectID": "index.html#our-mission-decoding-trnc-tourism",
+    "href": "index.html#our-mission-decoding-trnc-tourism",
+    "title": "Team R’tistler",
+    "section": "Our Mission: Decoding TRNC Tourism 🏝️",
+    "text": "Our Mission: Decoding TRNC Tourism 🏝️\nBetween 2015 and 2024, the TRNC tourism sector has been on a rollercoaster. Our mission is to analyze:\nThe V-Shape Recovery: How we bounced back from COVID-19.\nThe Economy Filter: How inflation and exchange rates dance with tourist numbers.\nThe Infrastructure Puzzle: Making sense of bednights and occupancy.\n\n\n\n\n\n\nTipReady to see the magic?\n\n\n\nCheck out our Interactive Analysis to play with the data yourself!"
   }
 ]

@@ -72,3 +72,8 @@ panel <- tourism |>
 
 write_csv(panel, "data/processed/trnc_panel.csv")
 cat("\n[Script 01 Başarılı] Veri seti data/processed/trnc_panel.csv olarak kaydedildi.\n")
+# Yönerge gereği hem csv hem de RData olarak kaydediyoruz 
+write_csv(panel, "data/processed/trnc_panel.csv")
+save(panel, file = "data/processed/trnc_tourism.RData")
+
+cat("\n[Success] Dataset saved as .csv and .RData in data/processed/\n")
