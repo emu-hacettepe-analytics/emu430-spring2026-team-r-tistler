@@ -1,0 +1,4 @@
+[1,"==> quarto preview --render all --no-watch-inputs --no-browse\n\n"]
+[1,"\u001B[1m\u001B[34mRendering:\u001B[39m\u001B[22m\n\n"]
+[1,"\u001B[32mWatching files for changes\u001B[39m\n\u001B[32mBrowse at \u001B[39m\u001B[4m\u001B[32mhttp://localhost:4346/\u001B[39m\u001B[24m\nListening on http://127.0.0.1:4346/\n"]
+[1,"\u001B[31mGET: / (404: Not Found)\u001B[39m\n"]

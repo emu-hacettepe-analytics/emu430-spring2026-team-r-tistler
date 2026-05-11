@@ -1,0 +1,26 @@
+{
+    "id": "BA1DB90E",
+    "path": "~/Documents/GitHub/emu430-spring2026-team-r-tistler/01_build_dataset.R",
+    "project_path": "01_build_dataset.R",
+    "type": "r_source",
+    "hash": "4129829483",
+    "contents": "",
+    "dirty": false,
+    "created": 1778504247004.0,
+    "source_on_save": true,
+    "relative_order": 9,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "78,72",
+        "scrollLine": "55"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1778504259,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1778504259203,
+    "read_only": false,
+    "read_only_alternatives": []
+}
