@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: R'tistler Project Labzo
+  title: R'tistler Project Lab
   navbar:
     search: true
     left:
