@@ -36,3 +36,6 @@ format:
 
 editor: visual
 
+project:
+  resources:
+    - "data/processed/trnc_panel_monthly.csv"

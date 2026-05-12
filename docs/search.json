@@ -89,5 +89,12 @@
     "title": "Analysis",
     "section": "3. Conclusion",
     "text": "3. Conclusion\nThe data proves that the TRNC tourism sector is resilient but remains vulnerable to macroeconomic shifts in Turkey. Future strategies should prioritize Market Diversification to maintain growth during inflationary cycles."
+  },
+  {
+    "objectID": "convert.html",
+    "href": "convert.html",
+    "title": "R'tistler Project Lab",
+    "section": "",
+    "text": "panel_data &lt;- read.csv(“trnc_panel_monthly.csv”)\nsave(panel_data, file = “trnc_panel_monthly.RData”)\n\n\n\n Back to top"
   }
 ]

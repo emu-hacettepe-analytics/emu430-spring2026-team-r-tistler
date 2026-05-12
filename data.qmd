@@ -36,4 +36,4 @@ To prepare the data for analysis, we followed a reproducible workflow in R:
 
 The final processed dataset is stored in `.RData` format for easy loading in R sessions.
 
--   [Download TRNC Tourism Data (.RData)](data/processed/trnc_tourism.RData){download="trnc_tourism.RData"}
+-   [Download TRNC Tourism Data (.RData](data/processed/trnc_panel_monthly.RData){download="trnc_tourism.RData"}[)](data/processed/trnc_tourism.RData){download="trnc_tourism.RData"}

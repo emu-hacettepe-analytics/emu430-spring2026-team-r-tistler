@@ -1,0 +1,4 @@
+
+panel_data <- read.csv("trnc_panel_monthly.csv")
+
+save(panel_data, file = "trnc_panel_monthly.RData")
