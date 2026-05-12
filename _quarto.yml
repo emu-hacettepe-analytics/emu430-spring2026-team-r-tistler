@@ -16,7 +16,8 @@ website:
 
             
     tools:
-      - icon: github
+      
+        icon: github
         href: https://twitter.com
 
   page-navigation: true
@@ -36,6 +37,3 @@ format:
 
 editor: visual
 
-project:
-  resources:
-    - "data/processed/trnc_panel_monthly.csv"
