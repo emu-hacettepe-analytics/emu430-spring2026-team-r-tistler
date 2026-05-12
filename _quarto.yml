@@ -1,9 +1,11 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    - "data/processed/trnc_panel_monthly.csv"
 
 website:
-  title: R'tistler Project Lab
+  title: "R'tistler Project Lab"
   navbar:
     search: true
     left:
@@ -13,11 +15,10 @@ website:
         href: data.qmd
       - text: Analysis
         href: analysis.qmd
-
-            
     tools:
-      
-        icon: github
+      - icon: github
+        href: https://github.com/
+      - icon: twitter
         href: https://twitter.com
 
   page-navigation: true
@@ -25,8 +26,11 @@ website:
   page-footer:
     center: "Hacettepe IE - EMU 430 - Spring 2026" 
     border: true
+
 format:
   html:
+    code-fold: true
+    code-summary: "Show the Code"
     toc: true
     toc-location: left
     theme: 
@@ -34,6 +38,6 @@ format:
       dark: cyborg
     css: styles.css
 
-
 editor: visual
+
 

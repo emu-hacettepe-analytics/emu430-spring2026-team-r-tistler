@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "analysis.html",
+    "href": "analysis.html",
+    "title": "Analysis",
+    "section": "",
+    "text": "This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024."
+  },
+  {
+    "objectID": "analysis.html#summary",
+    "href": "analysis.html#summary",
+    "title": "Analysis",
+    "section": "",
+    "text": "This section presents a multidisciplinary analysis of the TRNC tourism sector. We move beyond simple data visualization to understand the underlying economic drivers, the impact of the global pandemic, and the strategic resilience of the industry between 2015 and 2024."
+  },
+  {
+    "objectID": "analysis.html#exploratory-data-analysis-eda",
+    "href": "analysis.html#exploratory-data-analysis-eda",
+    "title": "Analysis",
+    "section": "1. Exploratory Data Analysis (EDA)",
+    "text": "1. Exploratory Data Analysis (EDA)\n\n1.1 Trend Identification & The “V-Shape” Recovery\nOur primary focus is the annual tourist inflow. The visualization below highlights the sector’s trajectory through three distinct eras: Pre-Pandemic Growth, The COVID-19 Collapse, and The Record-Breaking Recovery.\n\n\nShow V-Shape Analysis Code\nannual_data &lt;- trnc_panel_monthly %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_arrivals = sum(arrivals, na.rm = TRUE))\n\n\np_recovery &lt;- ggplot(annual_data, aes(x = year, y = total_arrivals)) +\n  annotate(\"rect\", xmin = 2015, xmax = 2019.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = \"blue\") +\n  annotate(\"rect\", xmin = 2019.5, xmax = 2021.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = \"red\") +\n  annotate(\"rect\", xmin = 2021.5, xmax = 2024.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = \"green\") +\n  \n  geom_line(color = \"#be185d\", size = 1.2) +\n  geom_point(color = \"#be185d\", size = 3) +\n  \n  annotate(\"text\", x = 2017.5, y = max(annual_data$total_arrivals), label = \"Growth\", fontface = \"bold\", color = \"darkblue\") +\n  annotate(\"text\", x = 2020.5, y = min(annual_data$total_arrivals)*1.2, label = \"Collapse\", fontface = \"bold\", color = \"darkred\") +\n  annotate(\"text\", x = 2023, y = max(annual_data$total_arrivals), label = \"Recovery\", fontface = \"bold\", color = \"darkgreen\") +\n  \n  theme_minimal() +\n  labs(title = \"Annual Tourist Inflow: V-Shape Analysis\", x = \"Year\", y = \"Total Visitors\") +\n  scale_x_continuous(breaks = seq(2015, 2024, 1))\n\nggplotly(p_recovery)\n\n\n\n\n\n\n\n\nStep-by-Step Interpretation:\nBaseline (2015-2019): A consistent upward trend, peaking at 2.1M arrivals before the global crisis.\nThe Shock (2020): A massive drop to approx. 470k arrivals, a nearly 77% decrease, testing the sector’s operational survival.\nThe Surge (2024): A record-breaking 2.56 million arrivals. This exceeds pre-pandemic levels by 24%, indicating a strong “revenge tourism” effect and successful market adaptation."
+  },
+  {
+    "objectID": "analysis.html#infrastructure-performance-occupancy-rates",
+    "href": "analysis.html#infrastructure-performance-occupancy-rates",
+    "title": "Analysis",
+    "section": "1.2 Infrastructure Performance: Occupancy Rates",
+    "text": "1.2 Infrastructure Performance: Occupancy Rates\nTo measure efficiency, we analyze the Hotel Occupancy Rate. This metric tells us if the increase in tourist numbers is reflected in hotel utilization.\n\n\nTechnical Analysis (R Code)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(tidyr)\nlibrary(plotly)\n\n\ninfra_data &lt;- trnc_panel_monthly %&gt;%\n  group_by(year) %&gt;%\n  summarise(\n    Total_Arrivals = sum(arrivals, na.rm = TRUE),\n    Total_Bednights = sum(bednights, na.rm = TRUE)\n  ) %&gt;%\n  \n  mutate(\n    Arrivals_Index = (Total_Arrivals / first(Total_Arrivals)) * 100,\n    Bednights_Index = (Total_Bednights / first(Total_Bednights)) * 100\n  )\n\n\np_infra &lt;- ggplot(infra_data, aes(x = year)) +\n  \n  geom_line(aes(y = Arrivals_Index, color = \"Total Arrivals\"), size = 1.2) +\n  geom_point(aes(y = Arrivals_Index, color = \"Total Arrivals\"), size = 3) +\n  \n  \n  geom_line(aes(y = Bednights_Index, color = \"Bednights (Utilization)\"), size = 1.2, linetype = \"dashed\") +\n  geom_point(aes(y = Bednights_Index, color = \"Bednights (Utilization)\"), size = 3) +\n  \n \n  annotate(\"label\", x = 2017, y = 145, label = \"2017 Peak:\\n58.5% Occupancy\", fill = \"white\", color = \"darkblue\", fontface = \"bold\") +\n  annotate(\"label\", x = 2024, y = 160, label = \"2024 Record:\\n43.6% Occupancy\", fill = \"#be185d\", color = \"white\", fontface = \"bold\") +\n  \n  \n  scale_color_manual(values = c(\"Total Arrivals\" = \"#be185d\", \"Bednights (Utilization)\" = \"darkblue\")) +\n  theme_minimal() +\n  labs(\n    title = \"Infrastructure Gap: Arrivals vs. Hotel Utilization\",\n    subtitle = \"Arrivals are peaking, but hotel occupancy lags behind 2017 levels\",\n    x = \"Year\",\n    y = \"Growth Index (2015 = 100)\",\n    color = \"Metric\"\n  ) +\n  theme(legend.position = \"bottom\")\n\n\nggplotly(p_infra)\n\n\n\n\n\n\n\nKey Insight:\nInterestingly, while arrivals are at a record high in 2024, occupancy (43.6%) has not yet reached the 2017 peak (58.5%). This suggests a significant increase in total bed capacity or a shift towards alternative accommodations like short-term rentals."
+  },
+  {
+    "objectID": "analysis.html#statistical-insights-macroeconomic-drivers",
+    "href": "analysis.html#statistical-insights-macroeconomic-drivers",
+    "title": "Analysis",
+    "section": "2. Statistical Insights & Macroeconomic Drivers",
+    "text": "2. Statistical Insights & Macroeconomic Drivers\nIn this step, we analyze the “why” behind the numbers, focusing on the correlation between the economy and tourism."
+  },
+  {
+    "objectID": "analysis.html#the-inflation-sensitivity",
+    "href": "analysis.html#the-inflation-sensitivity",
+    "title": "Analysis",
+    "section": "2.1 The Inflation Sensitivity",
+    "text": "2.1 The Inflation Sensitivity\nThe TRNC tourism market is highly sensitive to Turkey’s CPI (Inflation). As inflation rises in the source market, discretionary travel spending decreases. This explains the volatility seen in years of high economic pressure in Turkey."
+  },
+  {
+    "objectID": "analysis.html#the-currency-advantage-eurtry",
+    "href": "analysis.html#the-currency-advantage-eurtry",
+    "title": "Analysis",
+    "section": "2.2 The Currency Advantage (EUR/TRY)",
+    "text": "2.2 The Currency Advantage (EUR/TRY)\nThe depreciation of the Turkish Lira creates a “Price Advantage” for international markets.\nForeign Markets: North Cyprus becomes a high-value, low-cost destination for Euro and Dollar earners.\nLocal Strategy: This FX effect is a primary driver behind the record-breaking arrival numbers in 2023 and 2024."
+  },
+  {
+    "objectID": "analysis.html#visualizing-the-correlation-the-why-matrix",
+    "href": "analysis.html#visualizing-the-correlation-the-why-matrix",
+    "title": "Analysis",
+    "section": "2.3 Visualizing the Correlation (The “Why” Matrix)",
+    "text": "2.3 Visualizing the Correlation (The “Why” Matrix)\nTo quantify these relationships, we calculated a correlation matrix between arrivals and macroeconomic drivers.\n\n\nClick to see Correlation Code\npanel &lt;- read_csv(\"data/processed/trnc_panel_monthly.csv\")\n\nlibrary(reshape2)\n\ncor_data &lt;- panel %&gt;% select(arrivals, bednights, eur_try, cpi_turkey_yoy)\ncor_matrix &lt;- cor(cor_data, use = \"complete.obs\")\nmelted_cor &lt;- melt(cor_matrix)\n\nggplot(melted_cor, aes(Var1, Var2, fill = value)) +\ngeom_tile() +\nscale_fill_gradient2(low = \"#d63384\", high = \"#ffb6c1\", mid = \"white\", midpoint = 0) +\ngeom_text(aes(label = round(value, 2)), color = \"black\", size = 4) +\nlabs(title = \"Economic Driver Correlation Matrix\", x = \"\", y = \"\") +\ntheme_minimal()\n\n\n\n\n\n\n\n\n\nA strong positive correlation (near 0.85) with EUR/TRY confirms that as the Euro strengthens, tourism arrivals significantly increase."
+  },
+  {
+    "objectID": "analysis.html#strategic-growth-projection-2025-2027",
+    "href": "analysis.html#strategic-growth-projection-2025-2027",
+    "title": "Analysis",
+    "section": "2.4 Strategic Growth Projection (2025-2027)",
+    "text": "2.4 Strategic Growth Projection (2025-2027)\n\n\nTechnical Analysis (R Code)\nlibrary(ggplot2)\nlibrary(dplyr)\nlibrary(plotly)\n\n\nhistorical_annual &lt;- trnc_panel_monthly %&gt;%\n  group_by(year) %&gt;%\n  summarise(total_arrivals = sum(arrivals, na.rm = TRUE)) %&gt;%\n  filter(year &gt;= 2015)\n\ngrowth_model &lt;- lm(total_arrivals ~ year, data = historical_annual %&gt;% filter(year &gt;= 2022))\n\nfuture_years &lt;- data.frame(year = c(2025, 2026, 2027))\nfuture_years$total_arrivals &lt;- predict(growth_model, future_years)\n\n\nhistorical_annual$type &lt;- \"Actual Data\"\nfuture_years$type &lt;- \"Projection\"\nfull_data &lt;- bind_rows(historical_annual, future_years)\n\n\np_projection &lt;- ggplot(full_data, aes(x = year, y = total_arrivals, color = type)) +\n  \n  geom_line(data = subset(full_data, type == \"Actual Data\"), size = 1.2) +\n  geom_point(data = subset(full_data, type == \"Actual Data\"), size = 3) +\n  \n  \n  geom_line(data = subset(full_data, year &gt;= 2024), aes(group = 1), linetype = \"dashed\", size = 1.2) +\n  geom_point(data = subset(full_data, type == \"Projection\"), size = 4, shape = 18) +\n  \n  \n  annotate(\"segment\", x = 2027, xend = 2027, y = 0, yend = 2800000, linetype = \"dotted\", color = \"grey\") +\n  annotate(\"label\", x = 2027, y = 2850000, label = \"2027 Benchmark:\\n~2.8M Visitors\", \n           fill = \"#1e293b\", color = \"white\", fontface = \"bold\") +\n  \n  \n  scale_color_manual(values = c(\"Actual Data\" = \"#be185d\", \"Projection\" = \"#64748b\")) +\n  theme_minimal() +\n  labs(\n    title = \"Strategic Tourism Growth Projection (2025-2027)\",\n    subtitle = \"Based on post-2022 recovery momentum (Linear Extrapolation)\",\n    x = \"Year\",\n    y = \"Total Visitors\",\n    color = \"Data Status\"\n  ) +\n  scale_x_continuous(breaks = seq(2015, 2027, 1)) +\n  scale_y_continuous(labels = scales::comma)\n\n\nggplotly(p_projection)\n\n\n\n\n\n\nMethodological Note & Data Limitations:\n\nData Horizon: Our official dataset concludes in December 2024. The values presented for 2025, 2026, and 2027 are statistical projections, not observed facts.\nAssumption of Continuity: This model utilizes linear extrapolation, assuming that the structural and economic recovery observed post-2022 will maintain its momentum without new external shocks.\nAnalytical Purpose: This projection serves as a benchmark for infrastructure planning. It answers the question: “If the current growth trend holds, will our 2027 capacity be sufficient for the expected 2.8M visitors?”\nNote on Optimized Methodology: In this updated model, we specifically filtered the data to focus on the post-2022 recovery period. Including the extreme outliers of the 2020-2021 pandemic would statistically underestimate the current market momentum. By focusing on the recent 3-year “V-Shape” velocity, our 2027 projection reflects a more realistic growth target for the industry’s current trajectory."
+  },
+  {
+    "objectID": "analysis.html#conclusion",
+    "href": "analysis.html#conclusion",
+    "title": "Analysis",
+    "section": "3. Conclusion",
+    "text": "3. Conclusion\nThe data proves that the TRNC tourism sector is resilient but remains vulnerable to macroeconomic shifts in Turkey. Future strategies should prioritize Market Diversification to maintain growth during inflationary cycles."
+  },
+  {
+    "objectID": "data.html",
+    "href": "data.html",
+    "title": "Data",
+    "section": "",
+    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC). We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions.\nTRNC Tourism Planning Department: Statistical Yearbook 2024\nTRNC Statistical Institute: Consumer price indices\nTCMB EVDS: Exchange rate movements\nWorld Bank WDI: Global macroeconomic indicators\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\n\nDownload TRNC Tourism Data (.RData)"
+  },
+  {
+    "objectID": "data.html#about-the-dataset",
+    "href": "data.html#about-the-dataset",
+    "title": "Data",
+    "section": "",
+    "text": "Our project focuses on the tourism sector of the Turkish Republic of Northern Cyprus (TRNC). We analyze a multi-source dataset that covers the period between 2015 and 2024, including indicators such as total tourist arrivals, hotel occupancy rates, and average stay duration.\n\n\nWe chose this topic because tourism is a vital sector for the TRNC economy, yet it is highly sensitive to external shocks like the COVID-19 pandemic and currency fluctuations. Our objectives are to examine the recovery process post-pandemic and explore how inflation and exchange rates are associated with tourism activity. So far, we have successfully integrated tourism indicators with economic variables to allow for a multi-perspective analysis.\n\n\n\nThe dataset was compiled from several official institutions.\nTRNC Tourism Planning Department: Statistical Yearbook 2024\nTRNC Statistical Institute: Consumer price indices\nTCMB EVDS: Exchange rate movements\nWorld Bank WDI: Global macroeconomic indicators\n\n\n\nTo prepare the data for analysis, we followed a reproducible workflow in R:\n1. Importing: We loaded raw CSV files (e.g., trnc_panel_monthly.csv) containing tourism and economic metrics.\n2. Cleaning & Tidying: We standardized column names, ensured date formats were consistent, and handled missing values (NAs) to maintain dataset integrity.\n3. Reshaping: We merged separate datasets using common keys (Year/Month) to create a unified panel dataset.\n\n\n\nThe final processed dataset is stored in .RData format for easy loading in R sessions.\n\nDownload TRNC Tourism Data (.RData)"
+  },
+  {
+    "objectID": "convert.html",
+    "href": "convert.html",
+    "title": "R'tistler Project Lab",
+    "section": "",
+    "text": "panel_data &lt;- read.csv(“trnc_panel_monthly.csv”)\nsave(panel_data, file = “trnc_panel_monthly.RData”)\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R’tistler Project Lab",
+    "section": "",
+    "text": "Welcome to Our Project! 🚀\nThis website showcases our work for the EMU 430 - Data Analytics course. Here, you can find our end-to-end data analysis process, interactive visualizations, and detailed reports regarding our findings.\n\n\n\n\n\nHello there!\n\n\n\nProject Overview\nIn this project, we analyze the impact of macroeconomic variables on visitor arrivals in TRNC (Northern Cyprus). Our goal is to provide data-driven insights into tourism trends using advanced R programming and statistical modeling.\n\n\nQuick Access\n\nExploratory Data Analysis\nData Source & Preprocessing\n\n\n\n\nTeam Members (Team R’tistler)\nOur project is a collaborative effort by a dedicated team of aspiring industrial engineers.\n\n\n\nName\nProfile\n\n\n\n\nEda Can\nGitHub\n\n\nBaşak Özer\nGitHub\n\n\nCihangir Alperen Tokgöz\nGitHub\n\n\nEce Özlem Özcan\nGitHub\n\n\nSena Sivrikaya\nGitHub\n\n\n\n\n\n\n\n\n\nNoteCollaboration\n\n\n\nThis project was developed for the EMU 430 Data Analytics course at Hacettepe University.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top"
+  }
+]

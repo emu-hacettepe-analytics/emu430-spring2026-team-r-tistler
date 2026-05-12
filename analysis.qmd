@@ -20,23 +20,53 @@ This section presents a multidisciplinary analysis of the TRNC tourism sector. W
 Our primary focus is the annual tourist inflow. The visualization below highlights the sector's trajectory through three distinct eras: **Pre-Pandemic Growth, The COVID-19 Collapse, and The Record-Breaking Recovery.**
 
 ```{r}
+#| label: setup
 #| message: false
 #| warning: false
+#| include: false
 
-library(tidyverse)
+
+library(ggplot2)
+library(dplyr)
 library(plotly)
-library(scales)
+library(readr)
+library(lubridate)
+library(tidyr)
 
-panel <- read_csv("data/processed/trnc_panel.csv")
 
-p <- ggplot(panel, aes(x = year, y = arrivals_total)) +
-  geom_area(fill = "#ffb6c1", alpha = 0.4) +
-  geom_line(color = "#d63384", size = 1.2) +
-  geom_point(color = "#d63384", size = 3) +
-  scale_y_continuous(labels = label_comma()) +
+trnc_panel_monthly <- read_csv("data/processed/trnc_panel_monthly.csv")
+```
+
+```{r}
+#| label: v-shape-analysis
+#| warning: false
+#| message: false
+#| code-fold: true
+#| code-summary: "Show V-Shape Analysis Code"
+
+
+annual_data <- trnc_panel_monthly %>%
+  group_by(year) %>%
+  summarise(total_arrivals = sum(arrivals, na.rm = TRUE))
+
+
+p_recovery <- ggplot(annual_data, aes(x = year, y = total_arrivals)) +
+  annotate("rect", xmin = 2015, xmax = 2019.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = "blue") +
+  annotate("rect", xmin = 2019.5, xmax = 2021.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = "red") +
+  annotate("rect", xmin = 2021.5, xmax = 2024.5, ymin = -Inf, ymax = Inf, alpha = 0.1, fill = "green") +
+  
+  geom_line(color = "#be185d", size = 1.2) +
+  geom_point(color = "#be185d", size = 3) +
+  
+  annotate("text", x = 2017.5, y = max(annual_data$total_arrivals), label = "Growth", fontface = "bold", color = "darkblue") +
+  annotate("text", x = 2020.5, y = min(annual_data$total_arrivals)*1.2, label = "Collapse", fontface = "bold", color = "darkred") +
+  annotate("text", x = 2023, y = max(annual_data$total_arrivals), label = "Recovery", fontface = "bold", color = "darkgreen") +
+  
   theme_minimal() +
-  labs(title = "Total Annual Arrivals (Interactive)")
-ggplotly(p)
+  labs(title = "Annual Tourist Inflow: V-Shape Analysis", x = "Year", y = "Total Visitors") +
+  scale_x_continuous(breaks = seq(2015, 2024, 1))
+
+ggplotly(p_recovery)
 ```
 
 ### **Step-by-Step Interpretation**:
@@ -52,18 +82,56 @@ ggplotly(p)
 To measure efficiency, we analyze the Hotel Occupancy Rate. This metric tells us if the increase in tourist numbers is reflected in hotel utilization.
 
 ```{r}
-#| message: false
+#| label: infrastructure-performance
 #| warning: false
+#| message: false
 
-ggplot(panel, aes(x = year, y = occupancy_pct)) +
-  geom_col(fill = "#d63384", alpha = 0.6, width = 0.7) +
-  geom_text(aes(label = paste0(occupancy_pct, "%")), vjust = -0.5, fontface = "bold") +
-  scale_x_continuous(breaks = 2015:2024) +
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(plotly)
+
+
+infra_data <- trnc_panel_monthly %>%
+  group_by(year) %>%
+  summarise(
+    Total_Arrivals = sum(arrivals, na.rm = TRUE),
+    Total_Bednights = sum(bednights, na.rm = TRUE)
+  ) %>%
+  
+  mutate(
+    Arrivals_Index = (Total_Arrivals / first(Total_Arrivals)) * 100,
+    Bednights_Index = (Total_Bednights / first(Total_Bednights)) * 100
+  )
+
+
+p_infra <- ggplot(infra_data, aes(x = year)) +
+  
+  geom_line(aes(y = Arrivals_Index, color = "Total Arrivals"), size = 1.2) +
+  geom_point(aes(y = Arrivals_Index, color = "Total Arrivals"), size = 3) +
+  
+  
+  geom_line(aes(y = Bednights_Index, color = "Bednights (Utilization)"), size = 1.2, linetype = "dashed") +
+  geom_point(aes(y = Bednights_Index, color = "Bednights (Utilization)"), size = 3) +
+  
+ 
+  annotate("label", x = 2017, y = 145, label = "2017 Peak:\n58.5% Occupancy", fill = "white", color = "darkblue", fontface = "bold") +
+  annotate("label", x = 2024, y = 160, label = "2024 Record:\n43.6% Occupancy", fill = "#be185d", color = "white", fontface = "bold") +
+  
+  
+  scale_color_manual(values = c("Total Arrivals" = "#be185d", "Bednights (Utilization)" = "darkblue")) +
+  theme_minimal() +
   labs(
-    title = "Annual Hotel Occupancy (%)",
-    x = "Year", y = "Occupancy Rate"
+    title = "Infrastructure Gap: Arrivals vs. Hotel Utilization",
+    subtitle = "Arrivals are peaking, but hotel occupancy lags behind 2017 levels",
+    x = "Year",
+    y = "Growth Index (2015 = 100)",
+    color = "Metric"
   ) +
-  theme_minimal()
+  theme(legend.position = "bottom")
+
+
+ggplotly(p_infra)
 ```
 
 ### Key Insight:
@@ -96,9 +164,12 @@ To quantify these relationships, we calculated a correlation matrix between arri
 #| code-fold: true
 #| code-summary: "Click to see Correlation Code"
 
+
+panel <- read_csv("data/processed/trnc_panel_monthly.csv")
+
 library(reshape2)
 
-cor_data <- panel %>% select(arrivals_total, occupancy_pct, eur_try, cpi_turkey_yoy)
+cor_data <- panel %>% select(arrivals, bednights, eur_try, cpi_turkey_yoy)
 cor_matrix <- cor(cor_data, use = "complete.obs")
 melted_cor <- melt(cor_matrix)
 
@@ -115,28 +186,60 @@ A strong positive correlation (near 0.85) with EUR/TRY confirms that as the Euro
 ## **2.4** Strategic Growth Projection (2025-2027)
 
 ```{r}
-#| message: false
+#| label: strategic-projection
 #| warning: false
+#| message: false
 
-model_post_covid <- lm(arrivals_total ~ year, data = panel %>% filter(year >= 2022))
-forecast_2027 <- predict(model_post_covid, newdata = data.frame(year = 2027))
+library(ggplot2)
+library(dplyr)
+library(plotly)
 
-ggplot(panel, aes(x = year, y = arrivals_total)) +
-  geom_point(color = "#d63384", size = 3) +
-  geom_smooth(data = panel %>% filter(year >= 2022), method = "lm", 
-              color = "#d63384", fill = "#ffb6c1", alpha = 0.2, fullrange = TRUE) +
-  annotate("point", x = 2027, y = forecast_2027, color = "#007bff", size = 5, shape = 18) +
-  annotate("text", x = 2026.8, y = forecast_2027, 
-           label = paste("2027 Target:", label_comma()(round(forecast_2027))), 
-           hjust = 1.1, vjust = 1.5, color = "#007bff", fontface = "bold") +
-  scale_y_continuous(labels = label_comma(), limits = c(0, 4500000)) +
-  scale_x_continuous(breaks = seq(2015, 2027, 2)) +
+
+historical_annual <- trnc_panel_monthly %>%
+  group_by(year) %>%
+  summarise(total_arrivals = sum(arrivals, na.rm = TRUE)) %>%
+  filter(year >= 2015)
+
+growth_model <- lm(total_arrivals ~ year, data = historical_annual %>% filter(year >= 2022))
+
+future_years <- data.frame(year = c(2025, 2026, 2027))
+future_years$total_arrivals <- predict(growth_model, future_years)
+
+
+historical_annual$type <- "Actual Data"
+future_years$type <- "Projection"
+full_data <- bind_rows(historical_annual, future_years)
+
+
+p_projection <- ggplot(full_data, aes(x = year, y = total_arrivals, color = type)) +
+  
+  geom_line(data = subset(full_data, type == "Actual Data"), size = 1.2) +
+  geom_point(data = subset(full_data, type == "Actual Data"), size = 3) +
+  
+  
+  geom_line(data = subset(full_data, year >= 2024), aes(group = 1), linetype = "dashed", size = 1.2) +
+  geom_point(data = subset(full_data, type == "Projection"), size = 4, shape = 18) +
+  
+  
+  annotate("segment", x = 2027, xend = 2027, y = 0, yend = 2800000, linetype = "dotted", color = "grey") +
+  annotate("label", x = 2027, y = 2850000, label = "2027 Benchmark:\n~2.8M Visitors", 
+           fill = "#1e293b", color = "white", fontface = "bold") +
+  
+  
+  scale_color_manual(values = c("Actual Data" = "#be185d", "Projection" = "#64748b")) +
+  theme_minimal() +
   labs(
-    title = "Strategic Forecast for 2027 (Post-Pandemic Momentum)",
-    subtitle = "Projecting target volumes based on 2022-2024 recovery speed",
-    x = "Year", y = "Projected Arrivals"
+    title = "Strategic Tourism Growth Projection (2025-2027)",
+    subtitle = "Based on post-2022 recovery momentum (Linear Extrapolation)",
+    x = "Year",
+    y = "Total Visitors",
+    color = "Data Status"
   ) +
-  theme_minimal()
+  scale_x_continuous(breaks = seq(2015, 2027, 1)) +
+  scale_y_continuous(labels = scales::comma)
+
+
+ggplotly(p_projection)
 ```
 
 [**Methodological Note & Data Limitations:**]{.underline}

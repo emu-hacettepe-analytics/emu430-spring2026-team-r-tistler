@@ -1,1 +1,44 @@
+---
+title: "R'tistler Project Lab"
+---
 
+# Welcome to Our Project! 🚀
+
+This website showcases our work for the **EMU 430 - Data Analytics** course. Here, you can find our end-to-end data analysis process, interactive visualizations, and detailed reports regarding our findings.
+
+::: column-margin
+![Hello there!](images/mikeoo-01.gif)
+:::
+
+### Project Overview
+
+In this project, we analyze the impact of macroeconomic variables on visitor arrivals in **TRNC (Northern Cyprus)**. Our goal is to provide data-driven insights into tourism trends using advanced R programming and statistical modeling.
+
+### Quick Access
+
+-   [Exploratory Data Analysis](analysis.qmd)
+-   [Data Source & Preprocessing](data.qmd)
+
+------------------------------------------------------------------------
+
+### Team Members (Team R'tistler)
+
+Our project is a collaborative effort by a dedicated team of aspiring industrial engineers.
+
+| Name                        | Profile                                   |
+|-----------------------------|-------------------------------------------|
+| **Eda Can**                 | [GitHub](https://github.com/edaacanlab)   |
+| **Başak Özer**              | [GitHub](https://github.com/basakozerlab) |
+| **Cihangir Alperen Tokgöz** | [GitHub](https://github.com/cihangiir)    |
+| **Ece Özlem Özcan**         | [GitHub](https://github.com/eceozcann)    |
+| **Sena Sivrikaya**          | [GitHub](https://github.com/ssivrikaya)   |
+
+::: callout-note
+## Collaboration
+
+This project was developed for the EMU 430 Data Analytics course at Hacettepe University.
+:::
+
+|     |
+|-----|
+|     |

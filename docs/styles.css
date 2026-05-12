@@ -1,0 +1,54 @@
+/* css styles */
+/* 1. Navbar - Yumuşak Pembe ve Beyaz Yazılar */
+.navbar {
+  background-color: #ffb6c1 !important; /* Light Pink */
+  border-bottom: 2px solid #f8d7da;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-title, .nav-link {
+  color: #4a4a4a !important; /* Koyu gri yazılar pembe üstünde daha okunaklı */
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background-color: #ff99aa; /* Üzerine gelince biraz daha koyu pembe */
+  border-radius: 5px;
+}
+
+/* 2. Başlıklar - Zarif Pembe Dokunuşlar */
+h1, h2, h3 {
+  color: #d63384; /* Canlı ama yormayan bir pembe */
+  border-bottom: 1px solid #ffb6c1;
+  padding-bottom: 10px;
+  margin-top: 1.5em;
+}
+
+/* 3. Kod Blokları - Soft Görünüm */
+.code-summary {
+  background-color: #fff5f7;
+  border: 1px solid #ffb6c1;
+  color: #d63384;
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.9em;
+}
+
+/* 4. Sayfa Genelindeki Linkler */
+a {
+  color: #d63384;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ff99aa;
+  text-decoration: none;
+}
+
+/* 5. Genel Sayfa Yapısı */
+body {
+  background-color: #fafafa;
+  color: #333;
+}
